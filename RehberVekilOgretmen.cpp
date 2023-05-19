@@ -2,7 +2,8 @@
 #include <iomanip>
 #include <clocale>
 #include <ctime>
-#include <windows.h>
+#include <thread>		//	sleep için gereklidr
+#include <chrono>		//	sleep icin +gereklidir
 
 using namespace std;
 
@@ -56,7 +57,7 @@ int main() {
 	cout << " edebilirsin. Baþarýlar!" << endl;
 	cout << " "; cokYaz(66, '='); cout << endl;
 	cout << " - Baþlamak için herhangi bir tuþa basýnýz -" << endl << endl;
-	system("pause"); system("cls");
+	system("pause"); cout << "\033[2J\033[1;1H";		//	Ekran temizliði için ansi kaçýþ kodu (linux+windows)
 
 	for (gun; gun <= 60; gun = gun) {
 
@@ -141,7 +142,7 @@ int main() {
 			kalanHareket--;
 			hareket = 100;
 			cigdem--;
-			Sleep(1000);
+			this_thread::sleep_for(chrono::milliseconds(1000));
 		}
 		else if (hareket == 103) {
 			cout << " Fen" << dersYap;
@@ -149,7 +150,7 @@ int main() {
 			kalanHareket--;
 			hareket = 100;
 			sevim--;
-			Sleep(1000);
+			this_thread::sleep_for(chrono::milliseconds(1000));
 		}
 		else if (hareket == 104) {
 			cout << " Matematik" << dersYap;
@@ -157,7 +158,7 @@ int main() {
 			kalanHareket--;
 			hareket = 100;
 			zeliha--;
-			Sleep(1000);
+			this_thread::sleep_for(chrono::milliseconds(1000));
 		}
 		else if (hareket == 105) {
 			cout << " Beden" << dersYap;
@@ -165,7 +166,7 @@ int main() {
 			kalanHareket--;
 			hareket = 100;
 			ozge--;
-			Sleep(1000);
+			this_thread::sleep_for(chrono::milliseconds(1000));
 		}
 		else if (hareket == 110) {
 			cout << " 1. Edebiyat Öðretmeni Çiðdem'le sohbet et" << endl;
@@ -186,7 +187,7 @@ int main() {
 			edebiyat++;
 			kalanHareket--;
 			hareket = 100;
-			Sleep(1500);
+			this_thread::sleep_for(chrono::milliseconds(1500));
 		}
 		else if (hareket == 112) {
 			cout << " Fen Öðretmeni Sevim'le" << birSureSohbet;
@@ -194,7 +195,7 @@ int main() {
 			fen++;
 			kalanHareket--;
 			hareket = 100;
-			Sleep(1500);
+			this_thread::sleep_for(chrono::milliseconds(1500));
 		}
 		else if (hareket == 113) {
 			cout << " Matematik Öðretmeni Zeliha'yla" << birSureSohbet;
@@ -202,7 +203,7 @@ int main() {
 			matematik++;
 			kalanHareket--;
 			hareket = 100;
-			Sleep(1500);
+			this_thread::sleep_for(chrono::milliseconds(1500));
 		}
 		else if (hareket == 114) {
 			cout << " Beden Öðretmeni Özge'yle" << birSureSohbet;
@@ -210,7 +211,7 @@ int main() {
 			beden++;
 			kalanHareket--;
 			hareket = 100;
-			Sleep(1500);
+			this_thread::sleep_for(chrono::milliseconds(1500));
 		}
 		else if (hareket == 120) {
 			cout << " 1. Edebiyat" << snfOgrBul;
@@ -226,11 +227,11 @@ int main() {
 			else { hareket = 120; }
 		}
 		else if (hareket == 121) {
-			if (rastgele() == 1) { cout << " Ne yazýk ki edebiyat"<< snfOgrYok; Sleep(1500); }
+			if (rastgele() == 1) { cout << " Ne yazýk ki edebiyat"<< snfOgrYok; this_thread::sleep_for(chrono::milliseconds(1500));		}
 			else {
 				cout << " Edebiyat" << rehbEgVer;
 				toplamRehberlik++;
-				Sleep(2000);
+				this_thread::sleep_for(chrono::milliseconds(2000));
 			}
 			cout << endl;
 			edebiyat++;
@@ -239,11 +240,11 @@ int main() {
 			hareket = 100;
 		}
 		else if (hareket == 122) {
-			if (rastgele() == 1) { cout << " Ne yazýk ki fen"<< snfOgrYok; Sleep(1500); }
+			if (rastgele() == 1) { cout << " Ne yazýk ki fen"<< snfOgrYok; this_thread::sleep_for(chrono::milliseconds(1500));		}
 			else {
 				cout << " Fen" << rehbEgVer;
 				toplamRehberlik++;
-				Sleep(2000);
+				this_thread::sleep_for(chrono::milliseconds(2000));
 			}
 			cout << endl;
 			fen++;
@@ -252,11 +253,11 @@ int main() {
 			hareket = 100;
 		}
 		else if (hareket == 123) {
-			if (rastgele() == 1) { cout << " Ne yazýk ki matematik" << snfOgrYok; Sleep(1500);	}
+			if (rastgele() == 1) { cout << " Ne yazýk ki matematik" << snfOgrYok; this_thread::sleep_for(chrono::milliseconds(1500));		}
 			else {
 				cout << " Matematik" << rehbEgVer;
 				toplamRehberlik++;
-				Sleep(2000);
+				this_thread::sleep_for(chrono::milliseconds(2000));
 			}
 			cout << endl;
 			matematik++;
@@ -265,11 +266,11 @@ int main() {
 			hareket = 100;
 		}
 		else if (hareket == 124) {
-			if (rastgele() == 1) { cout << " Ne yazýk ki spor salonunda öðrenci bulamadýn."; Sleep(1500); }
+			if (rastgele() == 1) { cout << " Ne yazýk ki spor salonunda öðrenci bulamadýn."; this_thread::sleep_for(chrono::milliseconds(1500));	}
 			else {
 				cout << " Spor salonundan bulduðun öðrenciye rehberlik eðitimi verdin.";
 				toplamRehberlik++;
-				Sleep(2000);
+				this_thread::sleep_for(chrono::milliseconds(2000));
 			}
 			cout << endl;
 			beden++;
@@ -280,10 +281,10 @@ int main() {
 		cout << " "; cokYaz(56, '-'); cout << endl;
 
 		cout << endl << endl;
-		system("cls");
+		cout << "\033[2J\033[1;1H";		//	Ekran temizliði için ansi kaçýþ kodu (linux+windows)
 	}
 
-	system("cls");
+	cout << "\033[2J\033[1;1H";		//	Ekran temizliði için ansi kaçýþ kodu (linux+windows)
 	cout << " -OYUN SONU-" << endl;
 	if (hareket == 149) { cout << "- Sonuç: Baþarýsýz " << char(4) << " -" << endl; }
 	else if (hareket == 150) { cout << " - Sonuç: Baþarýlý! " << char(3) << " -" << endl; }
