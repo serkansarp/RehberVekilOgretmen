@@ -1,4 +1,4 @@
-# _REHBER VEKİL ÖĞRETMEN_
+# _Rehber Vekil Öğretmen_
 #### C++ ile geliştirilmiş, multiplatform olması için uğraş verilmiş ancak bazı terminallerin 'cls' komutunu tanımaması bu durumun muhtemelen problemlerinden biri olabilir. Optimizasyon için çok uğraşılmış, yorumlarla desteklenmiştir, Türkçe'dir.
 
 ### _Oyun Konusu_
