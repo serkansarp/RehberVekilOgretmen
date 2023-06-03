@@ -288,7 +288,7 @@ int main() {
 	cout << " -OYUN SONU-" << endl;
 	if (hareket == 149) { cout << "- Sonuç: Başarısız " << char(4) << " -" << endl; }
 	else if (hareket == 150) { cout << " - Sonuç: Başarılı! " << char(3) << " -" << endl; }
-	else { cout << " ERROR!" << endl << endl; }
+	else { cout << " !ERROR!" << endl << endl; }
 	system("pause");
 
 	return 0;
